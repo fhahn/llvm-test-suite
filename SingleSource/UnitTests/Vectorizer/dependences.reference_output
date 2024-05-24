@@ -1,0 +1,7 @@
+Checking read A[i], write A[2*i]
+Checking read A[i], write (A+1)[2*i]
+Checking read A[i], write (A+256)[2*i]
+Checking read A[2*i], write A[i]
+Checking read (A+1)[2*i], write A[i]
+Checking read (A+256)[2*i], write A[i]
+exit 0

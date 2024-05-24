@@ -11,9 +11,7 @@ llvm_test_run()
 
 llvm_test_executable(LoopVectorizationBenchmarks
   main.cpp
-  MathFunctions.cpp
-  RuntimeChecks.cpp
-  VectorOperations.cpp
+  EarlyExits.cpp
 )
 
 target_link_libraries(LoopVectorizationBenchmarks benchmark)
