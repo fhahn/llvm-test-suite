@@ -68,7 +68,12 @@ template <typename Ty>
 static void check(const std::unique_ptr<Ty[]> &Reference,
                   const std::unique_ptr<Ty[]> &Tmp, unsigned NumElements) {
   if (!std::equal(&Reference[0], &Reference[0] + NumElements, &Tmp[0])) {
-    std::cerr << "Miscompare\n";
+    for (unsigned I = 0; I != NumElements; ++I) {
+      if (Reference[I] != Tmp[I]) {
+        std::cerr << "Miscompare " << Reference[I] << " != " << Tmp[I] << " at index " << I << "\n";
+      }
+    }
+    std::cerr << "Miscompare ";
     exit(1);
   }
 }
