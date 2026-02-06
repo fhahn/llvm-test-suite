@@ -32,6 +32,16 @@
     Init PRAGMA_VF(VF) PRAGMA_IC(IC) Loop                                      \
   };
 
+// Macro with explicit VF, interleave count, and typed return value
+#define DEFINE_SCALAR_AND_VECTOR_FN2_TYPE_VF_INTERLEAVE(Init, Loop, Type, VF,  \
+                                                        IC)                    \
+  auto ScalarFn = [](auto *A, auto *B, Type TC) -> Type {                      \
+    Init _Pragma("clang loop vectorize(disable) interleave_count(1)") Loop     \
+  };                                                                           \
+  auto VectorFn = [](auto *A, auto *B, Type TC) -> Type {                      \
+    Init PRAGMA_VF(VF) PRAGMA_IC(IC) Loop                                      \
+  };
+
 #define DEFINE_SCALAR_AND_VECTOR_FN2_TYPE(Init, Loop, Type)                    \
   auto ScalarFn = [](auto *A, auto *B, Type TC) -> Type {                      \
     Init _Pragma("clang loop vectorize(disable) interleave_count(1)") Loop     \
