@@ -1,0 +1,10 @@
+Checking double_s4i32
+Checking double_s2i64
+Checking double_s2f64
+Checking offset_start
+Checking liveout_iv
+Checking ptr_step
+Checking trunc_iv
+Checking countdown
+Checking reduction_interleave
+exit 0

@@ -1,0 +1,9 @@
+Checking find_first_min_idx_i8
+Checking find_first_min_idx_i16
+Checking find_first_min_idx_i32
+Checking find_first_min_idx_i64
+Checking find_first_max_idx_i8
+Checking find_first_max_idx_i16
+Checking find_first_max_idx_i32
+Checking find_first_max_idx_i64
+exit 0
